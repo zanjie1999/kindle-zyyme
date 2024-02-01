@@ -1,0 +1,19 @@
+{
+"comment001": "咩咩工具箱",
+"items": [
+{
+"name": "咩咩工具箱",
+"priority": -1,
+"items": [
+{"name": "移动截图", "priority": 1, "exitmenu": false, "checked": true, "action": "/mnt/us/screenshotCopy.sh > /dev/null"},
+{"name": "显示IP", "priority": 2, "exitmenu": false, "checked": true, "action": "eips 7 1 \"IP: `ifconfig wlan0 | grep 'inet addr' | awk -F '[ :]' '{print $13}'`\""},
+{"name": "禁用锁屏", "priority": 3, "exitmenu": false, "checked": true, "action": "lipc-set-prop com.lab126.powerd preventScreenSaver 1"},
+{"name": "启用锁屏", "priority": 4, "exitmenu": false, "checked": true, "action": "lipc-set-prop com.lab126.powerd preventScreenSaver 0"},
+{"name": "启动ssh服务", "priority": 6, "exitmenu": false, "checked": true, "action": "/usr/sbin/sshd && eips 7 1 \"IP: `ifconfig wlan0 | grep 'inet addr' | awk -F '[ :]' '{print $13}'`\""},
+{"name": "停止ssh服务", "priority": 7, "exitmenu": false, "checked": true, "action": "killall sshd"},
+{"name": "删除最后的截图", "priority": 8, "exitmenu": false, "checked": true, "action": "rm `ls -tr /mnt/us/screenshot_* |tail -n 1`"},
+{"name": "查看上一张截图", "priority": 9, "exitmenu": false, "checked": true, "action": "./imgView.sh -"},
+{"name": "查看下一张截图", "priority": 10, "exitmenu": false, "checked": true, "action": "./imgView.sh +"},
+{"name": "退出", "priority": 11, "action": "rm /tmp/imgView"},
+{"name": "反色", "priority": 12, "exitmenu": false, "checked": true, "action": "fbdepth -q -H toggle && fbink -q -s -f"}
+]}]}
