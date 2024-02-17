@@ -7,7 +7,7 @@ sleep 1
 seek=$(cat /tmp/imgView)
 [ -z "$seek" ] && seek=0
 seek=$(($seek $1 1))
-files=$(ls -tr /mnt/us/screenshot/* /mnt/us/screenshot_*)
+files=$(ls -tr $2)
 flen=$(echo "$files" | wc -l)
 ([ $seek -gt $flen ] || [ $seek -lt 1 ]) && seek=1
 echo $seek > /tmp/imgView
