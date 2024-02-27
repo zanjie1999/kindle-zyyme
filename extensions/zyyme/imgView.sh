@@ -3,14 +3,18 @@
 # Kindle inage view
 # zyyme 240201
 
-sleep 1
 seek=$(cat /tmp/imgView)
 [ -z "$seek" ] && seek=0
 seek=$(($seek $1 1))
-files=$(ls -tr $2)
+files=$(find $2 -type f)
 flen=$(echo "$files" | wc -l)
-([ $seek -gt $flen ] || [ $seek -lt 1 ]) && seek=1
+[ $seek -lt 1 ] && seek=$flen
+[ $seek -gt $flen ] && seek=1
 echo $seek > /tmp/imgView
-
-eips -g `echo "$files" | tail -n $seek | head -n 1`
+fn=$(echo "$files" | tail -n $seek | head -n 1)
+eips 1 1 $seek/$flen
+# chinese -> ?
+eips 0 0 "`echo $fn | xargs ls | sed 's/\/mnt\/us\///'`"
+sleep 1
+eips -w reagl -g "$fn"
 
