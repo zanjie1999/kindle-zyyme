@@ -18,5 +18,7 @@
 {"name": "查看上一张屏保", "priority": 12, "exitmenu": false, "action": "./imgView.sh - '/usr/share/blanket/screensaver/bg_ss*.png'"},
 {"name": "查看下一张屏保", "priority": 13, "exitmenu": false, "action": "./imgView.sh + '/usr/share/blanket/screensaver/bg_ss*.png'"},
 {"name": "反色", "priority": 14, "exitmenu": false, "action": "fbdepth -q -H toggle && fbink -q -s -f"},
-{"name": "关机", "priority": 15, "exitmenu": false, "action": "shutdown -h 0 & sleep 1 && eips -g /usr/share/blanket/screensaver/bg_kcblackbackground.jpg"}
+{"name": "关机", "priority": 15, "exitmenu": false, "action": "shutdown -h 0 & sleep 1 && eips -f -g /usr/share/blanket/screensaver/bg_kcblackbackground.jpg"},
+{"name": "持续显示时间", "priority": 16, "exitmenu": false, "action": "while true;do eips \"`date '+%I:%M'`\" && sleep $((60-`date +%s`%60));done"},
+{"name": "停止显示时间", "priority": 17, "exitmenu": false, "action": "ps -ef|grep klauncher|awk '{system(\"kill \"$2)}'"}
 ]}]}
