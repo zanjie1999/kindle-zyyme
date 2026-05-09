@@ -27,7 +27,7 @@ write_item() {
 	priority=$2
 	action=$(json_escape "$3")
 
-	printf '        {"name": "%s", "priority": %s, "exitmenu": true, "checked": true, "action": "%s"}' "$name" "$priority" "$action"
+	printf '        {"name": "%s", "priority": %s, "exitmenu": false, "refresh": true, "checked": true, "action": "%s"}' "$name" "$priority" "$action"
 	need_comma=1
 }
 
