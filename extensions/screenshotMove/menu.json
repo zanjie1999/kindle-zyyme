@@ -5,7 +5,7 @@
       "priority": -1,
       "exitmenu": false,
       "items": [
-        {"name": "刷新列表", "priority": 1, "exitmenu": true, "checked": true, "action": "LANG=C.UTF-8 LC_ALL=C.UTF-8 LC_CTYPE=C.UTF-8 sh /mnt/us/extensions/screenshotMove/refresh.sh >/dev/null 2>&1"},
+        {"name": "刷新列表", "priority": 1, "exitmenu": false, "refresh": true, "checked": true, "action": "LANG=C.UTF-8 LC_ALL=C.UTF-8 LC_CTYPE=C.UTF-8 sh /mnt/us/extensions/screenshotMove/refresh.sh >/dev/null 2>&1"},
         {"name": "screenshot", "priority": 2, "exitmenu": true, "checked": true, "action": "LANG=C.UTF-8 LC_ALL=C.UTF-8 LC_CTYPE=C.UTF-8 sh /mnt/us/extensions/screenshotMove/move.sh \"screenshot\" >/dev/null 2>&1"},
         {"name": "咩咩", "priority": 3, "exitmenu": true, "checked": true, "action": "LANG=C.UTF-8 LC_ALL=C.UTF-8 LC_CTYPE=C.UTF-8 sh /mnt/us/extensions/screenshotMove/move.sh \"咩咩\" >/dev/null 2>&1"},
       ]
