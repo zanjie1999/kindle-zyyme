@@ -15,7 +15,7 @@
 {"name": "查看上一张截图", "priority": 9, "exitmenu": false, "action": "./imgView.sh - '/mnt/us/screenshot/ /mnt/us/screenshot_*'"},
 {"name": "查看下一张截图", "priority": 10, "exitmenu": false, "action": "./imgView.sh + '/mnt/us/screenshot/ /mnt/us/screenshot_*'"},
 {"name": "退出", "priority": 11, "action": "rm /tmp/imgView"},
-{"name": "同步截图owo", "priority": 12, "exitmenu": false, "checked": true, "action": "./rclone --config rclone.conf sync '/mnt/us/images/' 'owo:/file/OneDrive/图片/Kindle/'"},
+{"name": "同步截图owo", "priority": 12, "exitmenu": false, "checked": true, "action": "./rclone --config rclone.conf copy --ignore-existing '/mnt/us/images/' 'owo:/file/OneDrive/图片/Kindle/'"},
 {"name": "移动截图", "priority": 13, "exitmenu": false, "checked": true, "action": "/mnt/us/screenshotCopy.sh > /dev/null"},
 {"name": "查看上一张屏保", "priority": 14, "exitmenu": false, "action": "./imgView.sh - '/usr/share/blanket/screensaver/bg_ss*.png'"},
 {"name": "查看下一张屏保", "priority": 15, "exitmenu": false, "action": "./imgView.sh + '/usr/share/blanket/screensaver/bg_ss*.png'"},
@@ -23,5 +23,5 @@
 {"name": "关机", "priority": 17, "exitmenu": false, "action": "shutdown -h 0 & sleep 1 && eips -f -g /usr/share/blanket/screensaver/bg_kcblackbackground.jpg"},
 {"name": "持续显示时间", "priority": 18, "exitmenu": false, "action": "while true;do eips 32 0 \"`date '+%I:%M'`\" && sleep $((60-`date +%s`%60));done"},
 {"name": "停止显示时间", "priority": 19, "exitmenu": false, "action": "ps -ef|grep klauncher|awk '{system(\"kill \"$2)}'"},
-{"name": "同步截图sparkle", "priority": 20, "exitmenu": false, "checked": true, "action": "./rclone --config rclone.conf sync '/mnt/us/images/' 'sparkle:/Files/Kindle/'"}
+{"name": "同步截图sparkle", "priority": 20, "exitmenu": false, "checked": true, "action": "./rclone --config rclone.conf  copy --ignore-existing '/mnt/us/images/' 'sparkle:/Files/Kindle/'"}
 ]}]}
